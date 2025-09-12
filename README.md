@@ -11,6 +11,8 @@ A modern, responsive healthcare dashboard built with Next.js 15, TypeScript, and
 - **System Monitoring**: Real-time system status and performance metrics
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 
+
+
 ## Technologies Used
 
 - **Next.js 15** - React framework with App Router
