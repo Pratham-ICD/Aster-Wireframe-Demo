@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aster Healthcare Dashboard
+
+A modern, responsive healthcare dashboard built with Next.js 15, TypeScript, and Tailwind CSS. This dashboard provides comprehensive insights for healthcare management with real-time data visualization.
+
+## Features
+
+- **Modern UI Design**: Clean, professional interface with healthcare-focused design
+- **Real-time Metrics**: Live KPI cards showing patient counts, appointments, revenue, and bed occupancy
+- **Interactive Charts**: Multiple chart types including area charts, bar charts, and pie charts
+- **Patient Management**: Recent patients list with status tracking
+- **System Monitoring**: Real-time system status and performance metrics
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+
+## Technologies Used
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Recharts** - Chart library for data visualization
+- **Lucide React** - Beautiful icon library
+- **Shadcn UI** - Modern component library
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Dashboard Sections
 
-## Learn More
+### KPI Cards
+- Total Patients: 2,847 (+12%)
+- Active Appointments: 156 (+8%)
+- Monthly Revenue: $68,420 (+15%)
+- Bed Occupancy: 87% (+3%)
 
-To learn more about Next.js, take a look at the following resources:
+### Charts & Visualizations
+- **Patient Trends**: Area chart showing monthly patient visits and appointments
+- **Department Distribution**: Pie chart showing patient distribution across departments
+- **Revenue Analysis**: Bar chart displaying monthly revenue trends
+- **Recent Patients**: Live feed of recent patient activities
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### System Monitoring
+- Database status
+- API services status
+- Backup system status
+- Security status
+- Performance metrics (satisfaction, response time, uptime, data accuracy)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Quick Actions
+- Add New Patient
+- Schedule Appointment
+- View Reports
+- Emergency Alert
 
-## Deploy on Vercel
+## Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The dashboard uses mock data and can be easily customized by:
+- Updating the data arrays in `src/components/dashboard.tsx`
+- Modifying the color scheme in `tailwind.config.ts`
+- Adding new chart types using Recharts
+- Extending the component library with additional Shadcn UI components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Healthcare Industry Focus
+
+This dashboard is specifically designed for healthcare organizations like Aster Healthcare, featuring:
+- Medical terminology and metrics
+- Healthcare-specific KPIs
+- Patient management workflows
+- Department-based organization
+- Emergency response capabilities
+- Compliance and security monitoring
+
+## License
+
+This project is created for demonstration purposes for Aster Healthcare.
