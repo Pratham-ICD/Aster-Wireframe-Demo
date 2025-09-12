@@ -1,0 +1,281 @@
+import { HealthKPI, TrendData } from '@/types/dashboard';
+
+export const healthcareKPIs: HealthKPI[] = [
+  // BMI Cohort
+  {
+    id: 'bmi-1',
+    cohort: 'BMI',
+    healthOutcome: 'Prevalence of Obesity in Adult Patients (18+ years)',
+    denominator: 1250,
+    numerator: 312,
+    target: 25.0,
+    benchmark: 30.0,
+    percentage: 25.0,
+    vsTarget: 0.0,
+    vsBenchmark: -5.0,
+  },
+
+  // Hypertension Cohort
+  {
+    id: 'hyp-1',
+    cohort: 'Hypertension',
+    healthOutcome: 'Optimal Control of Hypertension',
+    denominator: 980,
+    numerator: 686,
+    target: 75.0,
+    benchmark: 70.0,
+    percentage: 70.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+  {
+    id: 'hyp-2',
+    cohort: 'Hypertension',
+    healthOutcome: 'Patients with Poorly Controlled Hypertension',
+    denominator: 980,
+    numerator: 196,
+    target: 15.0,
+    benchmark: 20.0,
+    percentage: 20.0,
+    vsTarget: 5.0,
+    vsBenchmark: 0.0,
+  },
+
+  // Diabetes Cohort
+  {
+    id: 'dia-1',
+    cohort: 'Diabetes',
+    healthOutcome: 'HbA1c Poor Control (>9.0%)',
+    denominator: 750,
+    numerator: 105,
+    target: 10.0,
+    benchmark: 15.0,
+    percentage: 14.0,
+    vsTarget: 4.0,
+    vsBenchmark: -1.0,
+  },
+  {
+    id: 'dia-2',
+    cohort: 'Diabetes',
+    healthOutcome: 'HbA1c Good Control (≤7.0%)',
+    denominator: 750,
+    numerator: 525,
+    target: 70.0,
+    benchmark: 65.0,
+    percentage: 70.0,
+    vsTarget: 0.0,
+    vsBenchmark: 5.0,
+  },
+  {
+    id: 'dia-3',
+    cohort: 'Diabetes',
+    healthOutcome: 'Annual Eye Examinations',
+    denominator: 750,
+    numerator: 600,
+    target: 85.0,
+    benchmark: 80.0,
+    percentage: 80.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+
+  // Iron Deficiency Cohort
+  {
+    id: 'iron-1',
+    cohort: 'Iron Deficiency',
+    healthOutcome: 'Iron Deficiency Screening (1-5 years)',
+    denominator: 420,
+    numerator: 357,
+    target: 90.0,
+    benchmark: 85.0,
+    percentage: 85.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+
+  // Kidney Cohort
+  {
+    id: 'kid-1',
+    cohort: 'Kidney',
+    healthOutcome: 'CKD Patients HbA1c Control (≤7.0%)',
+    denominator: 165,
+    numerator: 115,
+    target: 70.0,
+    benchmark: 65.0,
+    percentage: 69.7,
+    vsTarget: -0.3,
+    vsBenchmark: 4.7,
+  },
+  {
+    id: 'kid-2',
+    cohort: 'Kidney',
+    healthOutcome: 'CKD Nephrology Referrals',
+    denominator: 240,
+    numerator: 192,
+    target: 85.0,
+    benchmark: 80.0,
+    percentage: 80.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+  {
+    id: 'kid-3',
+    cohort: 'Kidney',
+    healthOutcome: 'Dialysis Phosphorus Control',
+    denominator: 85,
+    numerator: 68,
+    target: 85.0,
+    benchmark: 80.0,
+    percentage: 80.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+  {
+    id: 'kid-4',
+    cohort: 'Kidney',
+    healthOutcome: 'CKD Dietitian Referrals',
+    denominator: 240,
+    numerator: 168,
+    target: 75.0,
+    benchmark: 70.0,
+    percentage: 70.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+  {
+    id: 'kid-5',
+    cohort: 'Kidney',
+    healthOutcome: 'CKD Blood Pressure Control',
+    denominator: 240,
+    numerator: 180,
+    target: 80.0,
+    benchmark: 75.0,
+    percentage: 75.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+
+  // Dialysis Cohort
+  {
+    id: 'dial-1',
+    cohort: 'Dialysis',
+    healthOutcome: 'Anemia Management',
+    denominator: 85,
+    numerator: 72,
+    target: 90.0,
+    benchmark: 85.0,
+    percentage: 84.7,
+    vsTarget: -5.3,
+    vsBenchmark: -0.3,
+  },
+
+  // Urology Cohort
+  {
+    id: 'uro-1',
+    cohort: 'Urology',
+    healthOutcome: 'Prostate Cancer Screening (50-75 years)',
+    denominator: 180,
+    numerator: 126,
+    target: 75.0,
+    benchmark: 70.0,
+    percentage: 70.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+
+  // OBG Cohort
+  {
+    id: 'obg-1',
+    cohort: 'OBG',
+    healthOutcome: 'Vaccination during Pregnancy',
+    denominator: 320,
+    numerator: 272,
+    target: 90.0,
+    benchmark: 85.0,
+    percentage: 85.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+  {
+    id: 'obg-2',
+    cohort: 'OBG',
+    healthOutcome: 'PPH Management with IV Oxytocin',
+    denominator: 25,
+    numerator: 23,
+    target: 95.0,
+    benchmark: 90.0,
+    percentage: 92.0,
+    vsTarget: -3.0,
+    vsBenchmark: 2.0,
+  },
+  {
+    id: 'obg-3',
+    cohort: 'OBG',
+    healthOutcome: 'PPH Management with Tranexamic Acid',
+    denominator: 25,
+    numerator: 20,
+    target: 85.0,
+    benchmark: 80.0,
+    percentage: 80.0,
+    vsTarget: -5.0,
+    vsBenchmark: 0.0,
+  },
+  {
+    id: 'obg-4',
+    cohort: 'OBG',
+    healthOutcome: 'Hysterectomy for PPH',
+    denominator: 25,
+    numerator: 2,
+    target: 5.0,
+    benchmark: 8.0,
+    percentage: 8.0,
+    vsTarget: 3.0,
+    vsBenchmark: 0.0,
+  },
+];
+
+// Calculate actual percentages
+healthcareKPIs.forEach((kpi) => {
+  kpi.percentage = (kpi.numerator / kpi.denominator) * 100;
+  kpi.vsTarget = kpi.percentage - kpi.target;
+  kpi.vsBenchmark = kpi.percentage - kpi.benchmark;
+});
+
+export const trendData: TrendData[] = [
+  { month: 'Jan 2024', performance: 72.5, target: 75.0 },
+  { month: 'Feb 2024', performance: 74.2, target: 75.0 },
+  { month: 'Mar 2024', performance: 76.1, target: 75.0 },
+  { month: 'Apr 2024', performance: 75.8, target: 75.0 },
+  { month: 'May 2024', performance: 78.3, target: 75.0 },
+  { month: 'Jun 2024', performance: 79.6, target: 75.0 },
+];
+
+export const cohorts = Array.from(
+  new Set(healthcareKPIs.map((kpi) => kpi.cohort))
+);
+
+export const timePeriods = ['Q3 2024', 'Q2 2024', 'Q1 2024', 'YTD 2024'];
+
+export const facilities = [
+  'All Facilities',
+  'Aster Hospital Dubai',
+  'Aster Clinic Sharjah',
+  'Aster Medical Center Abu Dhabi',
+  'Aster Hospital Mankhool',
+];
+
+export const departments = [
+  'All Departments',
+  'Internal Medicine',
+  'Pediatrics',
+  'OBG',
+  'Cardiology',
+  'Nephrology',
+  'Endocrinology',
+];
+
+export const viewOptions = [
+  'Performance vs Target',
+  'Benchmark Comparison',
+  'Trend Analysis',
+];
