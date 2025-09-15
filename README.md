@@ -11,8 +11,6 @@ A modern, responsive healthcare dashboard built with Next.js 15, TypeScript, and
 - **System Monitoring**: Real-time system status and performance metrics
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 
-
-
 ## Technologies Used
 
 - **Next.js 15** - React framework with App Router
@@ -25,11 +23,13 @@ A modern, responsive healthcare dashboard built with Next.js 15, TypeScript, and
 ## Getting Started
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -39,18 +39,21 @@ npm run dev
 ## Dashboard Sections
 
 ### KPI Cards
+
 - Total Patients: 2,847 (+12%)
 - Active Appointments: 156 (+8%)
 - Monthly Revenue: $68,420 (+15%)
 - Bed Occupancy: 87% (+3%)
 
 ### Charts & Visualizations
+
 - **Patient Trends**: Area chart showing monthly patient visits and appointments
 - **Department Distribution**: Pie chart showing patient distribution across departments
 - **Revenue Analysis**: Bar chart displaying monthly revenue trends
 - **Recent Patients**: Live feed of recent patient activities
 
 ### System Monitoring
+
 - Database status
 - API services status
 - Backup system status
@@ -58,6 +61,7 @@ npm run dev
 - Performance metrics (satisfaction, response time, uptime, data accuracy)
 
 ### Quick Actions
+
 - Add New Patient
 - Schedule Appointment
 - View Reports
@@ -66,6 +70,7 @@ npm run dev
 ## Customization
 
 The dashboard uses mock data and can be easily customized by:
+
 - Updating the data arrays in `src/components/dashboard.tsx`
 - Modifying the color scheme in `tailwind.config.ts`
 - Adding new chart types using Recharts
@@ -74,13 +79,10 @@ The dashboard uses mock data and can be easily customized by:
 ## Healthcare Industry Focus
 
 This dashboard is specifically designed for healthcare organizations like Aster Healthcare, featuring:
+
 - Medical terminology and metrics
 - Healthcare-specific KPIs
 - Patient management workflows
 - Department-based organization
 - Emergency response capabilities
 - Compliance and security monitoring
-
-## License
-
-This project is created for demonstration purposes for Aster Healthcare.
