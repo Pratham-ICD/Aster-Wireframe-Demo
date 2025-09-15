@@ -1,6 +1,6 @@
 'use client';
 
-import { Activity, Users, Calendar, Building, BarChart3 } from 'lucide-react';
+import { Activity, Users, Calendar, Building } from 'lucide-react';
 import { FilterSelect, MultiSelect } from '@/components/ui/filter-select';
 import { DashboardFilters } from '@/types/dashboard';
 
@@ -11,7 +11,6 @@ interface DashboardHeaderProps {
   timePeriodOptions: Array<{ value: string; label: string }>;
   facilityOptions: Array<{ value: string; label: string }>;
   departmentOptions: Array<{ value: string; label: string }>;
-  viewOptions: Array<{ value: string; label: string }>;
 }
 
 export function DashboardHeader({
@@ -21,7 +20,6 @@ export function DashboardHeader({
   timePeriodOptions,
   facilityOptions,
   departmentOptions,
-  viewOptions,
 }: DashboardHeaderProps) {
   return (
     <div className='space-y-2'>
@@ -38,7 +36,7 @@ export function DashboardHeader({
 
       {/* Compact Filters */}
       <div className='bg-white/60 backdrop-blur-sm border border-blue-100 px-3 py-2'>
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2'>
+        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2'>
           <MultiSelect
             label='Cohorts'
             values={filters.cohorts}
@@ -75,13 +73,7 @@ export function DashboardHeader({
             icon={<Activity className='w-3 h-3' />}
           />
 
-          <FilterSelect
-            label='View'
-            value={filters.view}
-            options={viewOptions}
-            onChange={(view) => onFiltersChange({ ...filters, view })}
-            icon={<BarChart3 className='w-3 h-3' />}
-          />
+
         </div>
       </div>
     </div>

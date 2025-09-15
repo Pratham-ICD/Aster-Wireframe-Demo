@@ -12,6 +12,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 25.0,
     vsTarget: 0.0,
     vsBenchmark: -5.0,
+    facility: 'Aster Hospital Dubai',
+    department: 'Internal Medicine',
+    timePeriod: 'Q3 2024',
   },
 
   {
@@ -25,6 +28,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 70.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Clinic Sharjah',
+    department: 'Cardiology',
+    timePeriod: 'Q3 2024',
   },
   {
     id: 'hyp-2',
@@ -37,6 +43,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 20.0,
     vsTarget: 5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Medical Center Abu Dhabi',
+    department: 'Internal Medicine',
+    timePeriod: 'Q2 2024',
   },
 
   {
@@ -50,6 +59,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 14.0,
     vsTarget: 4.0,
     vsBenchmark: -1.0,
+    facility: 'Aster Hospital Dubai',
+    department: 'Endocrinology',
+    timePeriod: 'Q3 2024',
   },
   {
     id: 'dia-2',
@@ -62,6 +74,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 70.0,
     vsTarget: 0.0,
     vsBenchmark: 5.0,
+    facility: 'Aster Clinic Sharjah',
+    department: 'Endocrinology',
+    timePeriod: 'Q2 2024',
   },
   {
     id: 'dia-3',
@@ -74,6 +89,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 80.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Medical Center Abu Dhabi',
+    department: 'Endocrinology',
+    timePeriod: 'Q1 2024',
   },
 
   {
@@ -87,6 +105,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 85.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Hospital Mankhool',
+    department: 'Pediatrics',
+    timePeriod: 'Q3 2024',
   },
 
   {
@@ -100,6 +121,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 69.7,
     vsTarget: -0.3,
     vsBenchmark: 4.7,
+    facility: 'Aster Hospital Dubai',
+    department: 'Nephrology',
+    timePeriod: 'Q2 2024',
   },
   {
     id: 'kid-2',
@@ -112,6 +136,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 80.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Clinic Sharjah',
+    department: 'Nephrology',
+    timePeriod: 'Q1 2024',
   },
   {
     id: 'kid-3',
@@ -124,6 +151,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 80.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Medical Center Abu Dhabi',
+    department: 'Nephrology',
+    timePeriod: 'Q3 2024',
   },
   {
     id: 'kid-4',
@@ -136,6 +166,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 70.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Hospital Mankhool',
+    department: 'Nephrology',
+    timePeriod: 'Q2 2024',
   },
   {
     id: 'kid-5',
@@ -148,6 +181,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 75.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Hospital Dubai',
+    department: 'Nephrology',
+    timePeriod: 'Q1 2024',
   },
 
   {
@@ -161,6 +197,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 84.7,
     vsTarget: -5.3,
     vsBenchmark: -0.3,
+    facility: 'Aster Clinic Sharjah',
+    department: 'Nephrology',
+    timePeriod: 'Q3 2024',
   },
 
   {
@@ -174,6 +213,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 70.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Medical Center Abu Dhabi',
+    department: 'Internal Medicine',
+    timePeriod: 'Q2 2024',
   },
 
   {
@@ -187,6 +229,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 85.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Hospital Mankhool',
+    department: 'OBG',
+    timePeriod: 'Q1 2024',
   },
   {
     id: 'obg-2',
@@ -199,6 +244,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 92.0,
     vsTarget: -3.0,
     vsBenchmark: 2.0,
+    facility: 'Aster Hospital Dubai',
+    department: 'OBG',
+    timePeriod: 'Q3 2024',
   },
   {
     id: 'obg-3',
@@ -211,6 +259,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 80.0,
     vsTarget: -5.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Clinic Sharjah',
+    department: 'OBG',
+    timePeriod: 'Q2 2024',
   },
   {
     id: 'obg-4',
@@ -223,6 +274,9 @@ export const healthcareKPIs: HealthKPI[] = [
     percentage: 8.0,
     vsTarget: 3.0,
     vsBenchmark: 0.0,
+    facility: 'Aster Medical Center Abu Dhabi',
+    department: 'OBG',
+    timePeriod: 'Q1 2024',
   },
 ];
 

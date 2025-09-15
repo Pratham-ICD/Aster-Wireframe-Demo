@@ -9,6 +9,9 @@ export interface HealthKPI {
   percentage: number;
   vsTarget: number;
   vsBenchmark: number;
+  facility: string;
+  department: string;
+  timePeriod: string;
 }
 
 export interface CohortSummary {
@@ -24,7 +27,6 @@ export interface DashboardFilters {
   timePeriod: string;
   facility: string;
   department: string;
-  view: string;
 }
 
 export interface TrendData {

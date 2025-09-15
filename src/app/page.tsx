@@ -15,7 +15,6 @@ import {
   timePeriods,
   facilities,
   departments,
-  viewOptions,
 } from '@/data/healthcareData';
 import { DashboardFilters } from '@/types/dashboard';
 import { formatNumber } from '@/lib/utils';
@@ -33,16 +32,26 @@ export default function DashboardPage() {
     timePeriod: 'Q3 2024',
     facility: 'All Facilities',
     department: 'All Departments',
-    view: 'Performance vs Target',
   });
 
-  // Filter data based on selected cohorts
+  // Filter data based on selected filters
   const filteredKPIs = useMemo(() => {
-    return healthcareKPIs.filter(
-      (kpi) =>
-        filters.cohorts.length === 0 || filters.cohorts.includes(kpi.cohort)
-    );
-  }, [filters.cohorts]);
+    return healthcareKPIs.filter((kpi) => {
+      // Cohorts filter
+      const cohortMatch = filters.cohorts.length === 0 || filters.cohorts.includes(kpi.cohort);
+      
+      // Time period filter
+      const timePeriodMatch = filters.timePeriod === 'Q3 2024' || kpi.timePeriod === filters.timePeriod;
+      
+      // Facility filter
+      const facilityMatch = filters.facility === 'All Facilities' || kpi.facility === filters.facility;
+      
+      // Department filter
+      const departmentMatch = filters.department === 'All Departments' || kpi.department === filters.department;
+      
+      return cohortMatch && timePeriodMatch && facilityMatch && departmentMatch;
+    });
+  }, [filters.cohorts, filters.timePeriod, filters.facility, filters.department]);
 
   // Calculate summary metrics
   const summaryMetrics = useMemo(() => {
@@ -86,10 +95,6 @@ export default function DashboardPage() {
     value: dept,
     label: dept,
   }));
-  const viewOptionsData = viewOptions.map((view) => ({
-    value: view,
-    label: view,
-  }));
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-white'>
@@ -102,7 +107,6 @@ export default function DashboardPage() {
           timePeriodOptions={timePeriodOptions}
           facilityOptions={facilityOptions}
           departmentOptions={departmentOptions}
-          viewOptions={viewOptionsData}
         />
 
         {/* KPI Summary Cards */}
@@ -444,13 +448,9 @@ export default function DashboardPage() {
         {/* Footer */}
         <div className='text-center py-8 text-slate-500 border-t border-slate-200 bg-gradient-to-r from-blue-50 to-slate-50 rounded-lg'>
           <p className='text-sm font-medium'>
-            © 2024 Aster DM Healthcare | Advanced Clinical Analytics Dashboard |
+            © 2025 Aster DM Healthcare | Advanced Clinical Analytics Dashboard |
             Last Updated: {new Date().toLocaleDateString()} | Data Source: Aster
             Clinical Database
-          </p>
-          <p className='text-xs mt-2 text-slate-400'>
-            Powered by Next.js, TypeScript & Modern Analytics • Real-time
-            Healthcare Intelligence
           </p>
         </div>
       </div>
