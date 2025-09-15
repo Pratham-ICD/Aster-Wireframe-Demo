@@ -1,7 +1,6 @@
 import { HealthKPI, TrendData } from '@/types/dashboard';
 
 export const healthcareKPIs: HealthKPI[] = [
-  // BMI Cohort
   {
     id: 'bmi-1',
     cohort: 'BMI',
@@ -15,7 +14,6 @@ export const healthcareKPIs: HealthKPI[] = [
     vsBenchmark: -5.0,
   },
 
-  // Hypertension Cohort
   {
     id: 'hyp-1',
     cohort: 'Hypertension',
@@ -41,7 +39,6 @@ export const healthcareKPIs: HealthKPI[] = [
     vsBenchmark: 0.0,
   },
 
-  // Diabetes Cohort
   {
     id: 'dia-1',
     cohort: 'Diabetes',
@@ -79,7 +76,6 @@ export const healthcareKPIs: HealthKPI[] = [
     vsBenchmark: 0.0,
   },
 
-  // Iron Deficiency Cohort
   {
     id: 'iron-1',
     cohort: 'Iron Deficiency',
@@ -93,7 +89,6 @@ export const healthcareKPIs: HealthKPI[] = [
     vsBenchmark: 0.0,
   },
 
-  // Kidney Cohort
   {
     id: 'kid-1',
     cohort: 'Kidney',
@@ -155,7 +150,6 @@ export const healthcareKPIs: HealthKPI[] = [
     vsBenchmark: 0.0,
   },
 
-  // Dialysis Cohort
   {
     id: 'dial-1',
     cohort: 'Dialysis',
@@ -169,7 +163,6 @@ export const healthcareKPIs: HealthKPI[] = [
     vsBenchmark: -0.3,
   },
 
-  // Urology Cohort
   {
     id: 'uro-1',
     cohort: 'Urology',
@@ -183,7 +176,6 @@ export const healthcareKPIs: HealthKPI[] = [
     vsBenchmark: 0.0,
   },
 
-  // OBG Cohort
   {
     id: 'obg-1',
     cohort: 'OBG',
@@ -234,7 +226,6 @@ export const healthcareKPIs: HealthKPI[] = [
   },
 ];
 
-// Calculate actual percentages
 healthcareKPIs.forEach((kpi) => {
   kpi.percentage = (kpi.numerator / kpi.denominator) * 100;
   kpi.vsTarget = kpi.percentage - kpi.target;
