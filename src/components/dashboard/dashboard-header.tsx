@@ -72,8 +72,6 @@ export function DashboardHeader({
             }
             icon={<Activity className='w-3 h-3' />}
           />
-
-
         </div>
       </div>
     </div>

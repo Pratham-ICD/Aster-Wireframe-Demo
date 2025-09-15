@@ -38,20 +38,32 @@ export default function DashboardPage() {
   const filteredKPIs = useMemo(() => {
     return healthcareKPIs.filter((kpi) => {
       // Cohorts filter
-      const cohortMatch = filters.cohorts.length === 0 || filters.cohorts.includes(kpi.cohort);
-      
+      const cohortMatch =
+        filters.cohorts.length === 0 || filters.cohorts.includes(kpi.cohort);
+
       // Time period filter
-      const timePeriodMatch = filters.timePeriod === 'Q3 2024' || kpi.timePeriod === filters.timePeriod;
-      
+      const timePeriodMatch =
+        filters.timePeriod === 'Q3 2024' ||
+        kpi.timePeriod === filters.timePeriod;
+
       // Facility filter
-      const facilityMatch = filters.facility === 'All Facilities' || kpi.facility === filters.facility;
-      
+      const facilityMatch =
+        filters.facility === 'All Facilities' ||
+        kpi.facility === filters.facility;
+
       // Department filter
-      const departmentMatch = filters.department === 'All Departments' || kpi.department === filters.department;
-      
+      const departmentMatch =
+        filters.department === 'All Departments' ||
+        kpi.department === filters.department;
+
       return cohortMatch && timePeriodMatch && facilityMatch && departmentMatch;
     });
-  }, [filters.cohorts, filters.timePeriod, filters.facility, filters.department]);
+  }, [
+    filters.cohorts,
+    filters.timePeriod,
+    filters.facility,
+    filters.department,
+  ]);
 
   // Calculate summary metrics
   const summaryMetrics = useMemo(() => {

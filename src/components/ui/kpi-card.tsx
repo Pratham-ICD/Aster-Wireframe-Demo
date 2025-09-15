@@ -26,6 +26,8 @@ export function KPICard({
   const formatValue = (val: number | string) => {
     if (typeof val === 'string') return val;
 
+    val = Number.isNaN(val) ? 0 : val;
+
     switch (format) {
       case 'percentage':
         return formatPercentage(val);

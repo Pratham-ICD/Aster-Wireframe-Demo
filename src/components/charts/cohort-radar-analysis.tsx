@@ -17,6 +17,27 @@ interface CohortRadarAnalysisProps {
 }
 
 export function CohortRadarAnalysis({ data }: CohortRadarAnalysisProps) {
+  // Early return if no data
+  if (!data || data.length === 0) {
+    return (
+      <Card className='bg-gradient-to-br from-white via-indigo-50/20 to-purple-100/10'>
+        <CardHeader>
+          <CardTitle className='flex items-center gap-2'>
+            🎯 Multi-Dimensional Cohort Analysis
+          </CardTitle>
+          <div className='text-sm text-slate-600'>
+            Radar view of cohort performance across 6 key dimensions
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className='flex items-center justify-center h-96 text-slate-500'>
+            No data available for cohort analysis.
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
   // Calculate cohort averages for radar chart
   const cohortMap = new Map();
 
@@ -42,27 +63,37 @@ export function CohortRadarAnalysis({ data }: CohortRadarAnalysisProps) {
   const radarData = Array.from(cohortMap.entries()).map(([cohort, data]) => ({
     cohort,
     performance:
-      data.performance.reduce((a: number, b: number) => a + b, 0) /
-      data.performance.length,
+      data.performance.length > 0
+        ? data.performance.reduce((a: number, b: number) => a + b, 0) /
+          data.performance.length
+        : 0,
     targetAchievement:
-      (data.performance.reduce((a: number, b: number) => a + b, 0) /
-        data.performance.length /
-        (data.targets.reduce((a: number, b: number) => a + b, 0) /
-          data.targets.length)) *
-      100,
+      data.performance.length > 0 && data.targets.length > 0
+        ? (data.performance.reduce((a: number, b: number) => a + b, 0) /
+            data.performance.length /
+            (data.targets.reduce((a: number, b: number) => a + b, 0) /
+              data.targets.length)) *
+          100
+        : 0,
     benchmarkComparison:
-      (data.performance.reduce((a: number, b: number) => a + b, 0) /
-        data.performance.length /
-        (data.benchmarks.reduce((a: number, b: number) => a + b, 0) /
-          data.benchmarks.length)) *
-      100,
+      data.performance.length > 0 && data.benchmarks.length > 0
+        ? (data.performance.reduce((a: number, b: number) => a + b, 0) /
+            data.performance.length /
+            (data.benchmarks.reduce((a: number, b: number) => a + b, 0) /
+              data.benchmarks.length)) *
+          100
+        : 0,
     patientVolume: Math.min(
       100,
-      data.patients.reduce((a: number, b: number) => a + b, 0) / 100
+      data.patients.length > 0
+        ? data.patients.reduce((a: number, b: number) => a + b, 0) / 100
+        : 0
     ), // Scaled to 0-100
     kpiDiversity: Math.min(100, data.kpiCount * 15), // Scaled based on number of KPIs
     consistency:
-      100 - (Math.max(...data.performance) - Math.min(...data.performance)), // Performance consistency
+      data.performance.length > 0
+        ? 100 - (Math.max(...data.performance) - Math.min(...data.performance))
+        : 0, // Performance consistency
   }));
 
   // Prepare data for radar chart
@@ -242,11 +273,13 @@ export function CohortRadarAnalysis({ data }: CohortRadarAnalysisProps) {
                 🏆 Best Performance:
               </span>
               <div className='text-slate-600'>
-                {
-                  radarData.reduce((best, current) =>
-                    current.performance > best.performance ? current : best
-                  ).cohort
-                }
+                {radarData.length > 0
+                  ? radarData.reduce(
+                      (best, current) =>
+                        current.performance > best.performance ? current : best,
+                      radarData[0]
+                    ).cohort
+                  : 'N/A'}
               </div>
             </div>
             <div>
@@ -254,13 +287,15 @@ export function CohortRadarAnalysis({ data }: CohortRadarAnalysisProps) {
                 🎯 Target Leader:
               </span>
               <div className='text-slate-600'>
-                {
-                  radarData.reduce((best, current) =>
-                    current.targetAchievement > best.targetAchievement
-                      ? current
-                      : best
-                  ).cohort
-                }
+                {radarData.length > 0
+                  ? radarData.reduce(
+                      (best, current) =>
+                        current.targetAchievement > best.targetAchievement
+                          ? current
+                          : best,
+                      radarData[0]
+                    ).cohort
+                  : 'N/A'}
               </div>
             </div>
             <div>
@@ -268,11 +303,13 @@ export function CohortRadarAnalysis({ data }: CohortRadarAnalysisProps) {
                 📊 Most Consistent:
               </span>
               <div className='text-slate-600'>
-                {
-                  radarData.reduce((best, current) =>
-                    current.consistency > best.consistency ? current : best
-                  ).cohort
-                }
+                {radarData.length > 0
+                  ? radarData.reduce(
+                      (best, current) =>
+                        current.consistency > best.consistency ? current : best,
+                      radarData[0]
+                    ).cohort
+                  : 'N/A'}
               </div>
             </div>
           </div>
